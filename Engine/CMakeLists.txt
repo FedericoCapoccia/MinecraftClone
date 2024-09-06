@@ -1,0 +1,14 @@
+﻿project(Engine)
+
+add_executable(Engine)
+
+#Libraries
+
+# Source files
+file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
+target_sources(Engine PRIVATE ${MY_SOURCES})
+
+target_include_directories(Engine PUBLIC "include")
+target_link_libraries(Engine PUBLIC "")
+
+#file(COPY ${CMAKE_SOURCE_DIR}/res DESTINATION ${CMAKE_BINARY_DIR}/Game)
