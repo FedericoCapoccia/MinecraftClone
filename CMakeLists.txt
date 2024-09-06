@@ -4,10 +4,6 @@ project ("MinecraftVulkan")
 set(CMAKE_CXX_STANDARD 17)
 
 add_subdirectory ("Engine")
-
-# Libraries
-#add_subdirectory("thirdparty/glfw")
-
 include(FetchContent)
 
 FetchContent_Declare(glm GIT_REPOSITORY	https://github.com/g-truc/glm.git GIT_TAG 1.0.1)
@@ -16,9 +12,4 @@ FetchContent_Declare(glfw GIT_REPOSITORY https://github.com/glfw/glfw.git GIT_TA
 FetchContent_MakeAvailable(glfw)
 FetchContent_MakeAvailable(glm)
 
-
-#find_package(Vulkan REQUIRED)
-#
-#message("Vulkan found? " ${VULKAN_FOUND})
-#message("Alright, where is it? " ${VULKAN_LIBRARY})
-#message("And I can include it? " ${VULKAN_INCLUDE_DIRS})
+find_package(Vulkan REQUIRED)
