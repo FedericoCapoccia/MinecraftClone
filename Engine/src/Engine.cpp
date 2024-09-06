@@ -1,38 +1,51 @@
-#define GLFW_INCLUDE_VULKAN
+#include "Engine.hpp"
+
+#include <cstdlib>
+#include <iostream>
+#include <stdexcept>
+
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
-#include <vulkan/vulkan.h>
-
-#define GLM_FORCE_RADIANS
-#define GLM_FORCE_DEPTH_ZERO_TO_ONE
-#include <glm/mat4x4.hpp>
-#include <glm/vec4.hpp>
-
-#include <iostream>
-
-int main()
+int main(void)
 {
-    glfwInit();
+    GLFWwindow* window;
 
-    glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-    GLFWwindow* window = glfwCreateWindow(800, 600, "Vulkan window", nullptr, nullptr);
+    /* Initialize the library */
+    if (!glfwInit())
+        return -1;
 
-    uint32_t extensionCount = 0;
-    vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
+    /* Create a windowed mode window and its OpenGL context */
+    window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+    if (!window)
+    {
+        glfwTerminate();
+        return -1;
+    }
 
-    std::cout << extensionCount << " extensions supported\n";
+    /* Make the window's context current */
+    glfwMakeContextCurrent(window);
 
-    glm::mat4 matrix;
-    glm::vec4 vec;
-    auto test = matrix * vec;
+    if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress))) {
+        std::cout << "Failed to init glad" << std::endl;
+        glfwTerminate();
+        exit(EXIT_FAILURE);
+    }
 
-    while (!glfwWindowShouldClose(window)) {
+
+    /* Loop until the user closes the window */
+    while (!glfwWindowShouldClose(window))
+    {
+        /* Render here */
+        glClear(GL_COLOR_BUFFER_BIT);
+
+        /* Swap front and back buffers */
+        glfwSwapBuffers(window);
+
+        /* Poll for and process events */
         glfwPollEvents();
     }
 
-    glfwDestroyWindow(window);
-
     glfwTerminate();
-
     return 0;
 }
