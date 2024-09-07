@@ -3,9 +3,7 @@
 
 #include <glad/glad.h>
 
-#include <fstream>
 #include <iostream>
-#include <sstream>
 #include <string>
 
 namespace mc {

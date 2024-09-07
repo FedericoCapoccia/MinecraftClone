@@ -1,5 +1,8 @@
 #include "Shader.hpp"
 
+#include <fstream>
+#include <sstream>
+
 namespace mc {
 
 static unsigned int CompileShader(unsigned int type, const std::string& source);
