@@ -3,6 +3,8 @@
 #include <fstream>
 #include <sstream>
 
+#include <glm/gtc/type_ptr.hpp>
+
 namespace mc {
 
 static unsigned int CompileShader(unsigned int type, const std::string& source);
@@ -108,6 +110,10 @@ void Shader::setInt(const std::string& name, const int value) const
 void Shader::setFloat(const std::string& name, const float value) const
 {
     glUniform1f(glGetUniformLocation(ProgramId, name.c_str()), value);
+}
+void Shader::setMat4(const std::string& name, glm::mat4 value) const
+{
+    glUniformMatrix4fv(glGetUniformLocation(ProgramId, name.c_str()), 1, GL_FALSE, value_ptr(value));
 }
 
 }

@@ -8,9 +8,13 @@ layout (location = 2) in vec2 texture_coordinates;
 out vec3 ourColor;
 out vec2 ourTexCoord;
 
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 projection;
+
 void main()
 {
-    gl_Position = vec4(positions, 1.0);
+    gl_Position = projection * view * model * vec4(positions, 1.0f);
     ourColor = colors;
     ourTexCoord = texture_coordinates;
 }
@@ -27,5 +31,5 @@ uniform sampler2D texture2;
 
 void main()
 {
-    color = mix(texture(texture1, ourTexCoord), texture(texture2, ourTexCoord), 0.2) * vec4(ourColor, 1.0f);
+    color = mix(texture(texture1, ourTexCoord), texture(texture2, ourTexCoord), 0.2);
 }
