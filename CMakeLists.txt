@@ -3,9 +3,8 @@
 project ("MinecraftClone")
 set(CMAKE_CXX_STANDARD 17)
 
-add_subdirectory ("Engine")
+# Libraries
 include(FetchContent)
-
 FetchContent_Declare(glfw GIT_REPOSITORY https://github.com/glfw/glfw.git GIT_TAG master)
 if(NOT glfw_POPULATED)
     FetchContent_Populate(glfw)
@@ -18,3 +17,12 @@ endif()
 
 FetchContent_MakeAvailable(glfw)
 add_subdirectory("third-party/glad")
+
+
+add_executable(${CMAKE_PROJECT_NAME})
+
+file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
+target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${MY_SOURCES})
+
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC include ${glad_SOURCE_DIR}/include)
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC glfw opengl32 glad)
