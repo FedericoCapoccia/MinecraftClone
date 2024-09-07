@@ -6,6 +6,7 @@ set(CMAKE_CXX_STANDARD 17)
 # Libraries
 include(FetchContent)
 FetchContent_Declare(glfw GIT_REPOSITORY https://github.com/glfw/glfw.git GIT_TAG master)
+FetchContent_Declare(glm GIT_REPOSITORY https://github.com/g-truc/glm.git GIT_TAG 1.0.1)
 if(NOT glfw_POPULATED)
     FetchContent_Populate(glfw)
     set(GLFW_BUILD_EXAMPLES OFF CACHE INTERNAL "Build the GLFW example programs")
@@ -16,8 +17,8 @@ if(NOT glfw_POPULATED)
 endif()
 
 FetchContent_MakeAvailable(glfw)
+FetchContent_MakeAvailable(glm)
 add_subdirectory("third-party/glad")
-
 
 add_executable(
         ${CMAKE_PROJECT_NAME}
@@ -26,9 +27,13 @@ add_executable(
         "src/Renderer.cpp" "include/Renderer.hpp"
 )
 
-target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC include ${glad_SOURCE_DIR}/include)
+target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
+        include
+        ${glad_SOURCE_DIR}/include
+        third-party/stb_image
+)
 
-target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC glfw opengl32 glad)
+target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC glfw opengl32 glad glm::glm)
 
 # Copy resources to executable directory
 add_custom_target(copy_resources

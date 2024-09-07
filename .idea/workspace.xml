@@ -18,6 +18,7 @@
       <config projectName="MinecraftClone" targetName="MinecraftClone" />
       <config projectName="MinecraftClone" targetName="glad" />
       <config projectName="MinecraftClone" targetName="update_mappings" />
+      <config projectName="MinecraftClone" targetName="glm" />
       <config projectName="MinecraftClone" targetName="copy_resources" />
     </generated>
   </component>
@@ -28,16 +29,11 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b73a9a-49c9-406d-b7a2-33026c32dbb3" name="Changes" comment="Convert into mono-project and clearing buffer with color">
-      <change afterPath="$PROJECT_DIR$/include/Renderer.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/Shader.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/shaders/basic.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Renderer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Shader.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b3b73a9a-49c9-406d-b7a2-33026c32dbb3" name="Changes" comment="Shaders abstraction">
+      <change afterPath="$PROJECT_DIR$/third-party/stb_image/stb_image.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Engine.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Engine.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/shaders/basic.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/shaders/basic.glsl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -538,6 +534,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Dev\MinecraftClone\third-party\stb_image" />
       <recent name="C:\Dev\MinecraftClone\build" />
     </key>
   </component>
@@ -567,6 +564,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="glm" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MinecraftClone" TARGET_NAME="glm" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="update_mappings" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MinecraftClone" TARGET_NAME="update_mappings" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -577,6 +579,7 @@
       <item itemvalue="CMake Application.MinecraftClone" />
       <item itemvalue="CMake Application.glfw" />
       <item itemvalue="CMake Application.update_mappings" />
+      <item itemvalue="CMake Application.glm" />
       <item itemvalue="CMake Application.glad" />
     </list>
   </component>
@@ -590,7 +593,7 @@
       <updated>1725661958713</updated>
       <workItem from="1725661959764" duration="74000" />
       <workItem from="1725662090702" duration="89000" />
-      <workItem from="1725702973873" duration="14413000" />
+      <workItem from="1725702973873" duration="18449000" />
     </task>
     <task id="LOCAL-00001" summary="Opengl because I'm a pussy">
       <option name="closed" value="true" />
@@ -608,7 +611,23 @@
       <option name="project" value="LOCAL" />
       <updated>1725704392262</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Shaders abstraction">
+      <option name="closed" value="true" />
+      <created>1725718817179</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1725718817179</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Shaders abstraction">
+      <option name="closed" value="true" />
+      <created>1725718871826</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1725718871826</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,6 +641,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Opengl because I'm a pussy" />
     <MESSAGE value="Convert into mono-project and clearing buffer with color" />
-    <option name="LAST_COMMIT_MESSAGE" value="Convert into mono-project and clearing buffer with color" />
+    <MESSAGE value="Shaders abstraction" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shaders abstraction" />
   </component>
 </project>
