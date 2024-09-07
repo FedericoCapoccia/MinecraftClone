@@ -19,10 +19,19 @@ FetchContent_MakeAvailable(glfw)
 add_subdirectory("third-party/glad")
 
 
-add_executable(${CMAKE_PROJECT_NAME})
-
-file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "src/*.cpp")
-target_sources(${CMAKE_PROJECT_NAME} PRIVATE ${MY_SOURCES})
+add_executable(
+        ${CMAKE_PROJECT_NAME}
+        "src/Engine.cpp" "include/Engine.hpp"
+        "src/Shader.cpp" "include/Shader.hpp"
+        "src/Renderer.cpp" "include/Renderer.hpp"
+)
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC include ${glad_SOURCE_DIR}/include)
+
 target_link_libraries(${CMAKE_PROJECT_NAME} PUBLIC glfw opengl32 glad)
+
+# Copy resources to executable directory
+add_custom_target(copy_resources
+    COMMAND ${CMAKE_COMMAND} -E copy_directory ${CMAKE_CURRENT_LIST_DIR}/resources ${CMAKE_CURRENT_BINARY_DIR}/resources
+)
+add_dependencies(${CMAKE_PROJECT_NAME} copy_resources)
