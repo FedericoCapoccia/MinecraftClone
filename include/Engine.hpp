@@ -3,6 +3,8 @@
 
 #include "Camera.hpp"
 
+#include <vector>
+
 // clang-format off
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -39,14 +41,15 @@ private:
 
 // clang-format off
 constexpr float vertices[] = {
-    -1,  1,  1,
-    -1, -1,  1,
-     1, -1,  1,
-     1,  1,  1,
-    -1,  1, -1,
-    -1, -1, -1,
-     1, -1, -1,
-     1,  1, -1,
+    -1,  1,  1,     0.0f, 1.0f,  // Front Top-Left
+    -1, -1,  1,     0.0f, 0.0f,  // Front Bottom-Left
+     1, -1,  1,     1.0f, 0.0f,  // Front Bottom-Right
+     1,  1,  1,     1.0f, 1.0f,  // Front Top-Right
+
+    -1,  1, -1,     1.0f, 1.0f,  // Back Top-Left
+    -1, -1, -1,     1.0f, 0.0f,  // Back Bottom-Left
+     1, -1, -1,     0.0f, 0.0f,  // Back Bottom-Right
+     1,  1, -1,     0.0f, 1.0f   // Back Top-Right
 };
 
 constexpr unsigned char indices[] = {

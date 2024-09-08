@@ -30,6 +30,7 @@ add_executable(
         src/IndexBuffer.cpp include/IndexBuffer.hpp
         include/Callbacks.hpp
         include/VertexArray.hpp
+        include/Texture.hpp
 )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC

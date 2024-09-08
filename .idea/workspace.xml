@@ -29,21 +29,14 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b73a9a-49c9-406d-b7a2-33026c32dbb3" name="Changes" comment="Camera and end tutorial, refactoring for game">
-      <change afterPath="$PROJECT_DIR$/include/Callbacks.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/IndexBuffer.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/VertexArray.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/include/VertexBuffer.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/shaders/cube.glsl" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/IndexBuffer.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/VertexBuffer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
+    <list default="true" id="b3b73a9a-49c9-406d-b7a2-33026c32dbb3" name="Changes" comment="Abstractions and display cube">
+      <change afterPath="$PROJECT_DIR$/include/Texture.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Engine.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Engine.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/Shader.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Shader.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/textures/awesomeface.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/textures/container.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/textures/wall.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -609,7 +602,7 @@
       <workItem from="1725702973873" duration="18610000" />
       <workItem from="1725740610803" duration="5387000" />
       <workItem from="1725788351605" duration="272000" />
-      <workItem from="1725808903863" duration="15412000" />
+      <workItem from="1725808903863" duration="17214000" />
     </task>
     <task id="LOCAL-00001" summary="Opengl because I'm a pussy">
       <option name="closed" value="true" />
@@ -667,7 +660,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725816230570</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Abstractions and display cube">
+      <option name="closed" value="true" />
+      <created>1725824509640</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1725824509640</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -685,7 +686,8 @@
     <MESSAGE value="Texture on Texture with colors + glm" />
     <MESSAGE value="Matrices view model and projection" />
     <MESSAGE value="Camera and end tutorial, refactoring for game" />
-    <option name="LAST_COMMIT_MESSAGE" value="Camera and end tutorial, refactoring for game" />
+    <MESSAGE value="Abstractions and display cube" />
+    <option name="LAST_COMMIT_MESSAGE" value="Abstractions and display cube" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
