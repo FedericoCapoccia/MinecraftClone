@@ -29,11 +29,17 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b73a9a-49c9-406d-b7a2-33026c32dbb3" name="Changes" comment="Texture on Texture with colors + glm">
+    <list default="true" id="b3b73a9a-49c9-406d-b7a2-33026c32dbb3" name="Changes" comment="Matrices view model and projection">
+      <change afterPath="$PROJECT_DIR$/include/Camera.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/shaders/basic.glsl" beforeDir="false" afterPath="$PROJECT_DIR$/resources/shaders/basic.glsl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Engine.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Engine.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Shader.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Shader.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Shader.cpp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -527,7 +533,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -538,6 +544,11 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.MinecraftClone">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MinecraftClone" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MinecraftClone" TARGET_NAME="MinecraftClone" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MinecraftClone" RUN_TARGET_NAME="MinecraftClone">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -588,7 +599,9 @@
       <workItem from="1725661959764" duration="74000" />
       <workItem from="1725662090702" duration="89000" />
       <workItem from="1725702973873" duration="18610000" />
-      <workItem from="1725740610803" duration="5073000" />
+      <workItem from="1725740610803" duration="5387000" />
+      <workItem from="1725788351605" duration="272000" />
+      <workItem from="1725808903863" duration="6987000" />
     </task>
     <task id="LOCAL-00001" summary="Opengl because I'm a pussy">
       <option name="closed" value="true" />
@@ -630,7 +643,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725722934048</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Matrices view model and projection">
+      <option name="closed" value="true" />
+      <created>1725749564020</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1725749564020</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -646,6 +667,11 @@
     <MESSAGE value="Convert into mono-project and clearing buffer with color" />
     <MESSAGE value="Shaders abstraction" />
     <MESSAGE value="Texture on Texture with colors + glm" />
-    <option name="LAST_COMMIT_MESSAGE" value="Texture on Texture with colors + glm" />
+    <MESSAGE value="Matrices view model and projection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Matrices view model and projection" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

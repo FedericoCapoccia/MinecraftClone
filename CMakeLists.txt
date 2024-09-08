@@ -23,8 +23,10 @@ add_subdirectory("third-party/glad")
 add_executable(
         ${CMAKE_PROJECT_NAME}
         "src/Engine.cpp" "include/Engine.hpp"
-        "src/Shader.cpp" "include/Shader.hpp"
+        "include/Shader.hpp" "include/Camera.hpp"
         "src/Renderer.cpp" "include/Renderer.hpp"
+        "src/Game.cpp"
+
 )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
