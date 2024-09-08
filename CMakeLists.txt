@@ -1,7 +1,7 @@
 ﻿cmake_minimum_required (VERSION 3.8)
 
 project ("MinecraftClone")
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 # Libraries
 include(FetchContent)
@@ -26,7 +26,10 @@ add_executable(
         "include/Shader.hpp" "include/Camera.hpp"
         "src/Renderer.cpp" "include/Renderer.hpp"
         "src/Game.cpp"
-
+        src/VertexBuffer.cpp include/VertexBuffer.hpp
+        src/IndexBuffer.cpp include/IndexBuffer.hpp
+        include/Callbacks.hpp
+        include/VertexArray.hpp
 )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC

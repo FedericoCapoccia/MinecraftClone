@@ -29,17 +29,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3b73a9a-49c9-406d-b7a2-33026c32dbb3" name="Changes" comment="Matrices view model and projection">
-      <change afterPath="$PROJECT_DIR$/include/Camera.hpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Game.cpp" afterDir="false" />
+    <list default="true" id="b3b73a9a-49c9-406d-b7a2-33026c32dbb3" name="Changes" comment="Camera and end tutorial, refactoring for game">
+      <change afterPath="$PROJECT_DIR$/include/Callbacks.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/IndexBuffer.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/VertexArray.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/VertexBuffer.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/shaders/cube.glsl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/IndexBuffer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/VertexBuffer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Engine.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Engine.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Shader.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/include/Shader.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Engine.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shader.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -527,7 +531,7 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Dev/MinecraftClone&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Dev/MinecraftClone/src&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -538,6 +542,10 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Dev\MinecraftClone\src" />
+      <recent name="C:\Dev\MinecraftClone\include" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Dev\MinecraftClone\third-party\stb_image" />
       <recent name="C:\Dev\MinecraftClone\build" />
@@ -601,7 +609,7 @@
       <workItem from="1725702973873" duration="18610000" />
       <workItem from="1725740610803" duration="5387000" />
       <workItem from="1725788351605" duration="272000" />
-      <workItem from="1725808903863" duration="6987000" />
+      <workItem from="1725808903863" duration="15412000" />
     </task>
     <task id="LOCAL-00001" summary="Opengl because I'm a pussy">
       <option name="closed" value="true" />
@@ -651,7 +659,15 @@
       <option name="project" value="LOCAL" />
       <updated>1725749564020</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Camera and end tutorial, refactoring for game">
+      <option name="closed" value="true" />
+      <created>1725816230570</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1725816230570</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -668,7 +684,8 @@
     <MESSAGE value="Shaders abstraction" />
     <MESSAGE value="Texture on Texture with colors + glm" />
     <MESSAGE value="Matrices view model and projection" />
-    <option name="LAST_COMMIT_MESSAGE" value="Matrices view model and projection" />
+    <MESSAGE value="Camera and end tutorial, refactoring for game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Camera and end tutorial, refactoring for game" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,16 +1,14 @@
 #include "Engine.hpp"
 
+#include "IndexBuffer.hpp"
+#include "Shader.hpp"
+#include "VertexBuffer.hpp"
+#include "Callbacks.hpp"
+
 #include <iostream>
 #include <stdexcept>
 
 namespace mc {
-
-void framebuffer_size_callback(GLFWwindow* window, const int width, const int height)
-{
-    glViewport(0, 0, width, height);
-    s_WIDTH = width;
-    s_HEIGHT = height;
-}
 
 void Engine::initWindow()
 {
@@ -27,24 +25,66 @@ void Engine::initWindow()
     if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress))) {
         throw std::runtime_error("Failed to initialize GLAD");
     }
+
     glfwSetFramebufferSizeCallback(m_window, framebuffer_size_callback);
+    glfwSetInputMode(m_window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+    glfwSetCursorPosCallback(m_window, mouse_callback);
+    glfwSetScrollCallback(m_window, scroll_callback);
 
     // FLAGS
     glEnable(GL_DEPTH_TEST);
+    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_BACK);
 }
 
 void Engine::start() const
 {
+    unsigned int vao;
+    glGenVertexArrays(1, &vao);
+    glBindVertexArray(vao);
+
+    const VertexBuffer vb(vertices, sizeof(vertices));
+    const IndexBuffer ib(indices, 36);
+
+    // layout
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), reinterpret_cast<void*>(0));
+    glEnableVertexAttribArray(0);
+
+    VertexBuffer::Unbind();
+    IndexBuffer::Unbind();
+
+    const Shader shader("resources/shaders/cube.glsl");
+    shader.Bind();
+
     while (!glfwWindowShouldClose(m_window)) {
+        // Delta time and input management
+        const auto currentFrame = static_cast<float>(glfwGetTime());
+        deltaTime = currentFrame - lastFrame;
+        lastFrame = currentFrame;
+        processInput(m_window);
+
+        // Render setup
         glClearColor(0.475f, 0.651f, 1.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        std::cout << "Window Dimensions: " << s_WIDTH << " x " << s_HEIGHT << std::endl;
+
+        // Shader matrix injection
+        const glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), static_cast<float>(s_WIDTH) / static_cast<float>(s_HEIGHT), 0.1f, 100.0f);
+        const glm::mat4 view = camera.GetViewMatrix();
+        constexpr auto model = glm::mat4(1.0f);
+        shader.setMat4("model", model);
+        shader.setMat4("projection", projection);
+        shader.setMat4("view", view);
+
+        // Drawing
+        ib.Bind();
+        glBindVertexArray(vao);
+        glDrawElements(GL_TRIANGLES, ib.GetCount(), GL_UNSIGNED_BYTE, reinterpret_cast<void*>(0));
+
         glfwSwapBuffers(m_window);
         glfwPollEvents();
     }
-
 }
-
 
 }
 
@@ -82,28 +122,6 @@ void Engine::start() const
 //
 // int main()
 // {
-//     glfwInit();
-//     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-//     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-//     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-//
-//     GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Minecraft", nullptr, nullptr);
-//     if (!window) {
-//         std::cout << "Failed to create window" << std::endl;
-//         glfwTerminate();
-//         return -1;
-//     }
-//     glfwMakeContextCurrent(window);
-//
-//     // Glad init
-//     if (!gladLoadGLLoader(reinterpret_cast<GLADloadproc>(glfwGetProcAddress))) {
-//         std::cout << "Failed to initialize GLAD" << std::endl;
-//         return -1;
-//     }
-//
-//     glViewport(0, 0, WIDTH, HEIGHT);
-//     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-//
 //     constexpr float vertices[] = {
 //         -0.5f, -0.5f, -0.5f, 0.0f, 0.0f,
 //         0.5f, -0.5f, -0.5f, 1.0f, 0.0f,

@@ -59,9 +59,14 @@ public:
     }
     ~Shader() { glDeleteProgram(ProgramId); }
 
-    void use() const
+    void Bind() const
     {
         glUseProgram(ProgramId);
+    }
+
+    static void Unbind()
+    {
+        glUseProgram(0);
     }
 
     void setBool(const std::string& name, const bool value) const
